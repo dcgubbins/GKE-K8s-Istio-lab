@@ -1,0 +1,13 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: myhero-app
+spec:
+  hosts:
+  - app.34.77.171.121.xip.io
+  gateways:
+  - myhero-gateway
+  http:
+  - route:
+    - destination:
+        host: myhero-app.myhero.svc.cluster.local
